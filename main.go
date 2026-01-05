@@ -2,22 +2,13 @@ package main
 
 import "fmt"
 
-func getBiodata() (string, int) {
-    panggilan := "King"
-    semester := 4
-    return panggilan, semester
+func hitungPersegi(sisi int) (luas int, keliling int) {
+    luas = sisi * sisi
+    keliling = 4 * sisi
+    return 
 }
 
 func main() {
-    panggilan, sem := getBiodata()
-	// %s	String (Teks)	
-	// %d	Decimal (Angka bulat)	
-	// %f	Float (Angka desimal)	
-	// %t	True/False (Boolean)	
-	// %v	Value (Apa saja)	
-    fmt.Printf("Halo %s, sekarang sudah semester %d ya?\n", panggilan, sem)
-    fmt.Println("Halo", panggilan, "sekarang sudah semester", sem, "ya?")
-
-    _ , semesterSaja := getBiodata()
-    fmt.Println("Saya Semester:", semesterSaja)
+    l, k := hitungPersegi(10)
+    fmt.Printf("Luas: %d, Keliling: %d\n", l, k)
 }
