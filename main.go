@@ -2,21 +2,29 @@ package main
 
 import "fmt"
 
-// Struct adalah kumpulan dari berbagai tipe data yang dibungkus jadi satu kesatuan
-type Mahasiswa struct {
-    Nama    string
-    NIM     string
-    Jurusan string
-    IPK     float64
+type Motor struct {
+    Name  string
+    Power int
+}
+
+
+// (r Motor) sebelum nama func Artinya fungsi 'SayHello' cuma bisa dipakai oleh struct Motor
+func (r Motor) SayHello() {
+    fmt.Printf("Motor saya %s, tenaganya %d CC.\n", r.Name, r.Power)
+}
+
+func (r Motor) CekStatus() {
+	if r.Power > 300 {
+		fmt.Printf("gila lu cepet juga lu bang bisa kecepatan %d CC.\n", r.Power)
+	} else {
+		fmt.Printf("ya standart sih kalo kecepatan luwh %d CC.\n", r.Power)
+	}
 }
 
 func main() {
-	mhs1 := Mahasiswa{
-		Nama:    "Pranata Putrandana",
-		NIM:     "244107060114",
-		Jurusan: "Teknologi Informasi",
-		IPK:     3.90,
-	}
-	fmt.Printf("Mahasiswa: %s (%s)\n", mhs1.Nama, mhs1.NIM)
-	fmt.Printf("Jurusan: %s (IPK: %.2f)\n", mhs1.Jurusan, mhs1.IPK)
+    bot := Motor{Name: "Beat 2024", Power: 120}
+    
+    bot.SayHello()
+	bot.CekStatus()
+
 }
