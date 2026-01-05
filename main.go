@@ -2,10 +2,16 @@ package main
 
 import "fmt"
 
-func sapaMahasiswa(nama string, jurusan string) {
-    fmt.Printf("Halo %s, semangat ngodingnya di jurusan %s!\n", nama, jurusan)
+func getBiodata() (string, int) {
+    panggilan := "King"
+    semester := 4
+    return panggilan, semester
 }
 
 func main() {
-    sapaMahasiswa("Pranata", "Teknologi Informasi")
+    panggilan, sem := getBiodata()
+    fmt.Printf("Halo %s, sekarang sudah semester %d ya?\n", panggilan, sem)
+
+    _ , semesterSaja := getBiodata()
+    fmt.Println("Saya Semester:", semesterSaja)
 }
