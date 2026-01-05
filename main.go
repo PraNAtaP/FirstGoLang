@@ -2,10 +2,10 @@ package main
 
 import "fmt"
 
-func main() {
-	nama := "Pranata"
-	umur := 20
-	
- 	fmt.Println("anjay mabar", nama, umur)
+func sapaMahasiswa(nama string, jurusan string) {
+    fmt.Printf("Halo %s, semangat ngodingnya di jurusan %s!\n", nama, jurusan)
+}
 
+func main() {
+    sapaMahasiswa("Pranata", "Teknologi Informasi")
 }
